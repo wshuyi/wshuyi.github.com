@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="面对资料搜集、片段拼接、图片上传和样式排版等公众号写作中的常见痛点，你该怎么办？阅读本文，可以让你写作公众号时少一分痛苦，多一分愉快。  痛点公众号写作，是件痛并快乐的事儿。作者们会遇到以下几个常见的痛点：  资料搜集； 片段拼接； 图片上传； 样式排版。  我之前写过好几篇相关的文章，为你介绍了MarkEditor, Ulysses, Bear, Marked2, MWeb等写作利器。希望他们曾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="公众号写作：痛点与对策">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/公众号写作：痛点与对策/index.html">
+<meta property="og:site_name" content="玉树芝兰">
+<meta property="og:description" content="面对资料搜集、片段拼接、图片上传和样式排版等公众号写作中的常见痛点，你该怎么办？阅读本文，可以让你写作公众号时少一分痛苦，多一分愉快。  痛点公众号写作，是件痛并快乐的事儿。作者们会遇到以下几个常见的痛点：  资料搜集； 片段拼接； 图片上传； 样式排版。  我之前写过好几篇相关的文章，为你介绍了MarkEditor, Ulysses, Bear, Marked2, MWeb等写作利器。希望他们曾">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-22415eb88cf82b4d.png">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-0cd057c6f945bec9.jpeg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-be57b00f1ad36f28.jpeg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-0d7ad5f5ed25db49.jpeg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-682ce95e7f2ead37.png">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-2f399edbad6005e3.jpeg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-e60cbacc65b2c757.png">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-e85d0001d1a083f5.jpg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-e7513ca2c20aa03f.png">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-c0ffee2059259136.jpeg">
+<meta property="og:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-f7f711de6b42859e.jpg">
+<meta property="og:updated_time" content="2017-09-02T14:13:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="公众号写作：痛点与对策">
+<meta name="twitter:description" content="面对资料搜集、片段拼接、图片上传和样式排版等公众号写作中的常见痛点，你该怎么办？阅读本文，可以让你写作公众号时少一分痛苦，多一分愉快。  痛点公众号写作，是件痛并快乐的事儿。作者们会遇到以下几个常见的痛点：  资料搜集； 片段拼接； 图片上传； 样式排版。  我之前写过好几篇相关的文章，为你介绍了MarkEditor, Ulysses, Bear, Marked2, MWeb等写作利器。希望他们曾">
+<meta name="twitter:image" content="http://oejqwrqkh.bkt.clouddn.com/64542-22415eb88cf82b4d.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/02/公众号写作：痛点与对策/"/>
+
+
+
+
+
+  <title>公众号写作：痛点与对策 | 玉树芝兰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玉树芝兰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/公众号写作：痛点与对策/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">公众号写作：痛点与对策</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T22:12:16+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>面对资料搜集、片段拼接、图片上传和样式排版等公众号写作中的常见痛点，你该怎么办？阅读本文，可以让你写作公众号时少一分痛苦，多一分愉快。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-22415eb88cf82b4d.png" alt=""></p>
+<h1 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h1><p>公众号写作，是件痛并快乐的事儿。作者们会遇到以下几个常见的痛点：</p>
+<ol>
+<li>资料搜集；</li>
+<li>片段拼接；</li>
+<li>图片上传；</li>
+<li>样式排版。</li>
+</ol>
+<p>我之前写过好几篇相关的文章，为你介绍了MarkEditor, Ulysses, Bear, Marked2, MWeb等写作利器。希望他们曾经在公众号写作上为你提供了一些帮助。</p>
+<p>我一直在迭代改进公众号写作的流程。最近又发现了几样简单易用，功能强大，可以有效应对上述痛点的工具。通过本文分享给你，希望你写公众号的时候少一分痛苦，多一分愉快。</p>
+<h1 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a>卡片</h1><p>为了写出一篇好的公众号文章，累积素材是必须的。</p>
+<p>点滴积累素材和写作卡片的工具，我曾经推荐Evernote或者Bear。但是最近，我愈发体会到他们的重要问题。</p>
+<p>单纯资料搜集的时候还好，可当你打算对一张张卡片修改和拼接起来的时候，你只能看见树木，看不见森林。因为这些笔记软件的条目组织方式是<strong>线性</strong>的。</p>
+<p>笔记之间确实也可以通过链接相互交叉引用，但是这种关联的方式<strong>很不直观</strong>。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0cd057c6f945bec9.jpeg" alt=""></p>
+<p>我写作的时候，思维总是很发散。一会儿这里发现了问题，一会儿那里需要改动。如果每次都得去转换笔记条目，跳来跳去，一会儿就会觉得思路变得很混乱。</p>
+<p>所以，我需要一款工具，帮我在一个平面上摊开我的卡片，让我能以全局视角同时审视所有素材，而且可以自由地调整它们的顺序，修改其中的内容。</p>
+<p>我之前推荐过的Ulysses，在处理这个问题的时候，都很吃力。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-be57b00f1ad36f28.jpeg" alt=""></p>
+<p>如图所示，所有的卡片都在那里，你可以方便调整顺序，但是你无法同时关注到里面的细节。</p>
+<p>对于写短文，这还不算太大的问题。对于小说家或编剧来说，这可能会造成穿帮等硬伤。</p>
+<p>最近，我突然发现了一款可以解决这个痛点的工具。</p>
+<p>它可以帮你把各种素材，包括文字、图片、链接、主题、栏目等散落放置在一张无限大的画布上面，随便改，随便拼。这样素材的积累、拼接和排布都可以在一个工具里面完成，免去了你的搬运转换之苦。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0d7ad5f5ed25db49.jpeg" alt=""></p>
+<p>你不再用线性的思维来写作。非线性的思考方式，会带给你远距离联想的能力。帮助你文思泉涌，乐此不疲。</p>
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>我写文章，比较喜欢用插图。但是你应该也体会过插图的痛苦。需要上传到某个图床，不但初始要设置，而且如果你开始写作时用了本地图片链接，那还需要转换为图床对应版本。</p>
+<p>有的时候，你费了九牛二虎之力，图都上传完了，也转换了链接，才发现图片体积过大。微信公众号里面的插图不要超过2M，否则大概率粘贴失败。这样一来，你还得重新压缩图片，再来一次繁琐的操作过程。</p>
+<p>可是，用这款工具，你丝毫也不用担心插图问题。因为本地图片可以直接拖拽上来，远程图片可以复制粘贴。所有图片都会存在该工具的云端。它的后台用的是AWS云存储，端到端加密。你不用担心图床提供商突然跑路，更不用怕有人窥探你的图片或文本内容。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-682ce95e7f2ead37.png" alt=""></p>
+<p>其实这个你应该不太担心吧，毕竟你写公众号不就是要发布的吗？</p>
+<p>一个偶然的机会，我发现这款工具居然还自动帮用户做了图片的压缩——所有的图片都保持在了2M以下，而且在公众号里显示效果都很清晰。</p>
+<p>你把内容写好、调整完，就可以导出为Markdown格式。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2f399edbad6005e3.jpeg" alt=""></p>
+<p>导出后，你用非线性方式愉快写作的成果，就变成了线性的文字，可以供人们阅读了。</p>
+<p>但是先别急着进入微信公众号发布内容。最好先预览一下结果，并且把图片转换成国内图床链接，不然在微信公众号发布的时候，图片的显示可能会遇到问题。</p>
+<p>啊？说了半天，还得自己传到国内图床？你耍我呢？</p>
+<p>不是，你不用手动完成这一工作，可以用简书。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e60cbacc65b2c757.png" alt=""></p>
+<p>简书对于Markdown的支持特别友好。它不仅可以让你预览自己的结果，申明与保护知识产权，还可以随时修改内容。要知道目前公众号的文章一旦发布，内容是只能删不能改的。</p>
+<p>简书上的朋友第一时间先睹为快，同时也用众包的方式帮你做了编辑、校对等工作。许多读者的留言质量很高，意见很中肯。</p>
+<p>你会发现，当你在简书发布文章的时候，系统会提示你正在上传图片。发布之后，你的文章Markdown图片链接就变成了简书版本的了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e85d0001d1a083f5.jpg" alt=""></p>
+<p>这个版本的Markdown内容请你存下来，因为用它发布公众号最合适。</p>
+<h1 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h1><p>排版很容易。</p>
+<p>你需要选择一个合适的css样式文件，帮你去操心哪里用几号字，什么标题用某种颜色，以及段间距是多少之类的琐碎事。</p>
+<p>你，充满创意的作者，本来就应该集中注意力做大事儿嘛。</p>
+<p>css的选择，就是个见仁见智的事儿了。我本人推荐2个人专门为公众号制作的css，一个是阳志平的，另一个是尹航的。</p>
+<p>搜索并且下载他们的css文件以后，请先在Chrome里面安装一个插件，叫做Markdown Here。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e7513ca2c20aa03f.png" alt=""></p>
+<p>下载之后，右键点击该插件图标，在弹出菜单里面单击“选项”按钮。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-c0ffee2059259136.jpeg" alt=""></p>
+<p>找到上图这个文本框，把你中意的css文件内容拷贝粘贴进去。</p>
+<p>准备工作至此都已经做好了。下面请你进入微信公众平台，把从简书复制下来的Markdown内容粘贴到正文，然后点击Markdown Here插件。</p>
+<p>你就会见识到奇迹发生的一刻了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-f7f711de6b42859e.jpg" alt=""></p>
+<p>写到这里，这篇文章完成了。一篇公众号文章的创作，本应如此简单。</p>
+<p>回顾一下，利用本文推荐的几样工具，我们分别解决了公众号写作中常见的几大痛点，即资料搜集、片段拼接、图片上传和样式排版问题。</p>
+<p>如果你身边的朋友也在写公众号，请你将这篇文章在群组或朋友圈分享给他们，让他们的写作过程变得更加轻松愉快。</p>
+<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>除了本文介绍的工具以外，你还在公众号写作与发布中使用过哪些其他的好工具？欢迎留言分享给大家，我们一起交流讨论。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/28/MOOC教学，什么最重要？/" rel="next" title="MOOC教学，什么最重要？">
+                <i class="fa fa-chevron-left"></i> MOOC教学，什么最重要？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/06/移动互联网下，商家怎么搜集客户信息？/" rel="prev" title="移动互联网下，商家怎么搜集客户信息？">
+                移动互联网下，商家怎么搜集客户信息？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg"
+              alt="王树义" />
+          
+            <p class="site-author-name" itemprop="name">王树义</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#痛点"><span class="nav-number">1.</span> <span class="nav-text">痛点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卡片"><span class="nav-number">2.</span> <span class="nav-text">卡片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图床"><span class="nav-number">3.</span> <span class="nav-text">图床</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排版"><span class="nav-number">4.</span> <span class="nav-text">排版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#讨论"><span class="nav-number">5.</span> <span class="nav-text">讨论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王树义</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -952,6 +952,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/如何安装与连接MySQL？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/17/如何安装与连接MySQL？/" itemprop="url">如何安装与连接MySQL？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T22:09:11+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文用详细的步骤说明，帮助你一步步掌握MySQL的下载、安装和服务启动，客户端的安装、连接和测试。帮你避开初学MySQL使用中的那些坑。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-5cc313b4f246758a.jpeg" alt=""></p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>这是一个大数据时代。如果你开发一个大规模并发网络应用，或者需要搭建高访问量网站，企业级的数据库必不可少。</p>
+<p>常见的数据库有很多种，例如MySQL, Oracle, PostgreSQL, SQL Server等。对于免费开源工具的拥护者来说，MySQL是一个成熟的老牌开源数据库，很受开发者青睐。</p>
+<p>许多Web开发教程都会把注意力集中在开发环境搭建、编程语言概览和设计逻辑介绍上。虽然教程作者们要求学习者使用MySQL，却基本上只用一两句话告诉大家“安装好MySQL”。</p>
+<p>我亲眼见过许多初学者在MySQL安装上踩过不少坑。浪费了很多时间不说，也打击了学习的热情和信心。不是每一个初学Web开发的人都愿意折腾和钻研工具。所以我希望能帮助他们降低这个门槛。</p>
+<p>方法很简单，咱们一步步从下载开始，安装、启动和连接MySQL服务。我会提示你特别需要注意的事项，帮助你尽可能避开那些坑。</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>首先，到<a href="https://www.mysql.com/cn/downloads/" target="_blank" rel="external">这个网址</a>下载MySQL。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-bf5a1295b10d4132.jpeg" alt=""></p>
+<p>网站默认先会指引你去选择Enterprise Edition（商业版）。不要理会，选择蓝色分栏里面的第二项 Community （社区版），这个是免费的。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-34a1bbc7c298e567.jpeg" alt=""></p>
+<p>选择其中的第一项，下载服务器版本。你会看到以下页面。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-5d5d8a3b15534928.jpeg" alt=""></p>
+<p>我们先要确定下载的是用于自己操作系统的版本。我用的是苹果电脑，所以要确认是macOS版本。一般而言，macOS系统上安装软件，dmg格式的安装包是首选。所以我们选择页面里的第一个链接。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-20013e6d9cb80663.jpeg" alt=""></p>
+<p>在这个页面里，你可以跨过注册或者登录步骤，选择底部的蓝色链接，即要求立即直接下载。我们选择的这个服务器版本300多MB，网速够快的话很快就能下载完了。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>下载之后，双击dmg文件，我们会看到安装包里面包含一个.pkg安装文件。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-5e945934f0fa9837.jpeg" alt=""></p>
+<p>我们双击该文件，继续安装。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-de56ea2422ea6ad3.jpeg" alt=""></p>
+<p>安装提示是全中文界面。你只需要选择默认选项“继续”、“同意”、“安装”等即可。因为涉及系统服务安装，其中会有需要输入macOS用户密码的环节。</p>
+<p>输入完之后，就可以看到程序在写入内容了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-cb4e5b4dda4eaca8.jpeg" alt=""></p>
+<p>安装结束之后，会弹出一个窗口，告诉你MySQL的初始临时密码。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a53a1b9789d84b70.jpg" alt="2017-8-17_9-57-19_snapshots-02.jpg"></p>
+<p>请<strong>一定要保存</strong>好这个密码。我们第一次连接MySQL服务的时候，需要用到它。我把它存储到了自己的印象笔记中。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-659342cacd7ef888.png" alt=""></p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>安装完毕之后，我们需要运行MySQL服务。方法是点击系统屏幕右上角的spotlight图标（一个放大镜）。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a34d1a706433857d.jpeg" alt=""></p>
+<p>然后，在搜索框里输入mysql字样。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-eea47d6368373a2e.jpeg" alt=""></p>
+<p>搜索结果中出现的默认结果，就是系统偏好设置里的MySQL选项。回车确定即可。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-9ceafeca5f1d5cea.jpeg" alt=""></p>
+<p>我们会看到此时MySQL服务没有启动，用红色提示。点击”Start MySQL Server”按钮。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e1495833919821d3.jpeg" alt=""></p>
+<p>因为涉及到系统服务变化，会再次要求输入密码。输入之后，服务启动成功。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a0b2d5d442e09551.jpeg" alt=""></p>
+<p>你可能担心每次都需要手动启动，这很麻烦。不过请看上图中挑勾的地方，意味着每次系统重启的时候，MySQL服务都会自动启动。放心吧。</p>
+<h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><p>连接MySQL服务，需要客户端。客户端的选择非常多。我这里向你推荐的是<a href="https://www.navicat.com.cn/products/navicat-essentials" target="_blank" rel="external">Navicat Essentials</a>。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-d62b6925aed20564.jpeg" alt=""></p>
+<p>选择这个工具是因为它的通用性。从介绍页面可以知道它可以同时支持MySQL、MariaDB、SQL Server、PostgreSQL、Oracle 和 SQLite 数据库。这样，如果你将来的工作中需要迁移到其他数据库，就不必重新学习和安装其他的客户端连接工具了。很方便。</p>
+<p>相对于Navicat的旗舰版工具Navicat Premium，Navicat Essentials的价格更便宜。如果你是个教师或者学生，可以给Navicat客服写信，索取免费许可证。这是我获得的回信：</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-73f31c77fbab2fcb.png" alt=""></p>
+<p>按照邮件中提供的链接，我下载了macOS版本的 Navicat Premium Essentials。</p>
+<p>双击下载后的dmg链接，根据提示选择”Agree”进行安装。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-fcbf571aa7cde8c5.jpeg" alt=""></p>
+<p>然后，会出现以下界面。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e55206b673c6f00d.jpeg" alt=""></p>
+<p>拖拽左侧的黄色图标到右侧的文件夹图标，完成安装。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-b53031717b5537a1.jpeg" alt=""></p>
+<p>安装完成后，我们依然利用spotlight找到Navicat。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2044a7c174e7e308.jpeg" alt=""></p>
+<p>回车打开，就可以进入Navicat Premium Essentials的界面了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-3c962d222657d80c.jpeg" alt=""></p>
+<p>第一次启动，会提示是试用版。我们选择注册，输入激活码激活。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-94e77a4e6d47be65.png" alt=""></p>
+<p>然后见到激活成功提示，我们就可以愉快使用了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-486c248ee50d2206.jpeg" alt=""></p>
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p>点击软件左上角的“连接”按钮，会出现以下选项。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-edc08c1c40ba5785.jpeg" alt=""></p>
+<p>我们选择MySQL。会出现一个对话框，让我们填写。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-6fe72f8d86e26771.jpeg" alt=""></p>
+<p>我们给连接随便起个名字，就叫localhost吧。密码那一栏，填写之前你存好了的临时密码。其他保持默认。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-60cbd00418ca5f62.jpeg" alt=""></p>
+<p>点击确定之前，我们先点击左侧的连接测试按钮试试看能否正确连接。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-38acc5c8ed121cf1.jpeg" alt=""></p>
+<p>软件提示连接成功。证明我们输入的信息准确无误，可以放心点击确定了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-aed0a2319c9a9097.jpeg" alt=""></p>
+<p>此时，我们会看到本来空无一物的左侧栏目出现了localhost连接条目。我们双击它，即可连接到本机安装好的MySQL服务。</p>
+<p>然而第一次连接的时候，你会看到如下提示。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-add1191caa642093.jpeg" alt=""></p>
+<p>MySQL告诉过我们，给我们的密码是临时的。第一次连接成功，它的历史作用就完成了。我们需要输入一个新的密码，并且记录下来。以后都需要用新的密码连接。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-3fd8706c95b6a524.jpeg" alt=""></p>
+<p>新密码输入后，我们会看到如上图所示的结果，连接MySQL服务器成功后，一些默认的初始数据库会显示出来。我们点击其中的第一个看看里面都有哪些表。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-aaa94b57844803c1.jpeg" alt=""></p>
+<p>点击其中的FILES表格，我们看看表的内容是什么。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-1e245aeac88d8bc6.jpeg" alt=""></p>
+<p>下面我们尝试一下SQL查询是否好使。选择数据库下面的查询栏目。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2b6f8c0559be574d.jpeg" alt=""></p>
+<p>在右侧栏的下方，选择加号按钮添加查询。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-b8746421d84202d3.jpeg" alt=""></p>
+<p>我们会看到出现了右侧出现了查询编辑器。可以在其中输入查询语句了。我们输入一个最简单的查询，看看FILES表格里面都有哪些信息。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-6ef0e1c961c40e27.jpeg" alt=""></p>
+<p>查询语句返回了正确结果，大功告成！</p>
+<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><p>你喜欢用MySQL吗？你尝试过其他选择吗？在安装和连接数据库中，你还遇到过哪些问题？是如何解决的？欢迎留言分享给大家，我们一起交流讨论。</p>
+<p>因为我用的是苹果电脑，所以本文是依据macOS系统上的操作流程写就的。如果你用的是其他操作系统，也欢迎你把自己的安装配置过程详细记录下来，尤其是那些特别需要注意的地方，分享给其他人。</p>
+<p>如果你身边有亲朋好友正在学习Web开发，需要安装和使用MySQL数据库，也欢迎你把这篇文章转发到微信群或朋友圈中，让他们也能够受益。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/你该不该清理“不常联系的”微信好友？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1112,6 +1318,679 @@
 <h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>你使用微信“不常联系的朋友”功能了吗？你如何评价这个功能？你看好腾讯的信用评分功能吗？在信用评分这个细分市场，你觉得腾讯和阿里谁更胜一筹？欢迎留言，把你的心得想法分享给大家，我们一起交流讨论。</p>
 <p>如果你觉得这篇文章对身边的好友有用，也请把它分享到群组与朋友圈里，让更多你关心的人都能看到。</p>
 <h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p>王树义，大学教师，终身学习者。稍微懂一点儿写作、演讲、Python和机器学习。欢迎关注我的公众号“玉树芝兰”。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/移动互联网下，商家怎么搜集客户信息？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/06/移动互联网下，商家怎么搜集客户信息？/" itemprop="url">移动互联网下，商家怎么搜集客户信息？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T22:10:38+08:00">
+                2017-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过你的手机，商家可以了解到你的哪些信息？你真的认真思考过吗？读过本文，希望你不要太惊讶。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-7ee12ec25e9a32aa.png" alt=""></p>
+<h1 id="乱象"><a href="#乱象" class="headerlink" title="乱象"></a>乱象</h1><p>儿子上的幼教班搞了个音乐节。路上没有堵车，我们提前到了一会儿。一进入剧院，就被那阵势惊到了。</p>
+<p>大厅里面，人群摩肩接踵。穿着各种机构工作服的男男女女往来穿梭，左手拿着小礼物，右手拿着登记簿。只要你登记手机号码和姓名，礼物就是你的了。小朋友们兴高采烈，吵嚷着要礼物的声音此起彼伏。</p>
+<p>四周几张长桌上面，也是一样的架势。登记吧，给你礼物！</p>
+<p>时间还早，许多家庭并不想这么早检票入场。外面还有人不断涌入，于是人们堆积在大厅里，拥挤不堪。</p>
+<p>在这里，家长们的体验如何？</p>
+<p>糟透了。</p>
+<p>两侧的楼梯台阶上，早已站满了不堪其扰的男士们。太太们带着孩子在人群里面时而挤来挤去，时而排队等候。先生们排队站在楼梯同侧，一人举着个手机，面无表情地等待时间流逝。</p>
+<p>这些工作人员为什么跟苍蝇一样追着人们要手机号呢？当然是为了营销。</p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>营销的方法，可以是漫天撒网。你经常收到的垃圾邮件、垃圾短信，以及无孔不入混进QQ群和微信朋友圈的那些广告，都是这种漫天撒网的产物。在有互联网之前，这些信息原本是通过电线杆上和楼道里的小广告来传播的。</p>
+<p>商品或服务若非假冒伪劣，总是有人需要的。对你来说是垃圾的广告，对有的人就很有用。</p>
+<p>不过这种漫天撒网的方式效果越来越差。首先会引起大部分人的反感，其次会被其他广告的信息淹没。因为成功率低，所以你不得不加大覆盖范围和发送频率。这就陷入了恶性循环。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-baa0472b3e642c71.png" alt=""></p>
+<p>可见营销中信息很重要。对客户越了解，你给他的推荐就越靠谱，成功率就越高。</p>
+<p>如果你拿不到个体的精确信息，退而求其次盯住某个重要群体，也是相对好一些的办法。</p>
+<p>例如这次的音乐节，就是个周边产品和服务品牌的好机会。</p>
+<p>小孩的钱，非常好赚。这些家长不仅掏钱上了早教班，还花钱搭时间带着孩子来参加音乐节。那么作为商家，确实都该速来。</p>
+<p>“在有鱼的地方钓鱼”是句智慧箴言。从传统的策略看，在这时候来这种场合收集用户信息，宣传自己的品牌或商品，是聪明的举动。</p>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>问题在于，明明有更好的方法放在那里，为什么不用呢？做客户关系管理、信息采集和营销也需要利用科技与时俱进啊。</p>
+<p>看着商家们白白浪费的宝贵资源，我都替他们心疼。</p>
+<p>不要忽视每个人都携带的一个外挂器官——手机。</p>
+<p>有的人马虎大意，出来参加活动可能连钱包、钥匙都忘了带。但再马虎大意的人，都不大可能会忘了带手机。</p>
+<p>一天要拿出来看几十上百遍的东西，哪里轻易忘得了？</p>
+<p>只要你带了手机，事情就好办了。</p>
+<p>给你举个例子。</p>
+<p>在美国，有一家连锁店，叫做Kohl’s。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a1729ba40c4cae97.png" alt=""></p>
+<p>它和许多商店一样，也会发送优惠券给顾客。但是别的店顾客不堪其扰，Kohl’s的顾客却有很高的满意度。他们并不反感优惠券，而且利用率非常高。</p>
+<p>这是怎么回事儿？</p>
+<p>给你1分钟时间，闭上眼睛思考一下，然后睁开眼睛对一下答案。</p>
+<p>好了，答案时间到。</p>
+<p>Kohl’s的策略是——当用户<strong>驻足在某件商品前一段时间</strong>，就推送优惠券。</p>
+<p>想象一下，你看中了一双鞋。端详着爱不释手，可是1000元的标价让你犹豫不决。这时候，手机上突然来了一条短信——电子优惠券，这个品牌的鞋七折，仅限当日！</p>
+<p>你是买呢，还是买呢？</p>
+<p>这个案例，来自某著名商学院的MOOC，所以权威性和真实性没有问题。但是每当我讲课谈及这个案例的时候，心里也总是画个问号——用户的个体级别(individual level)识别和轨迹跟踪是怎么做的呢？这种方式会不会违反法律呢？</p>
+<h1 id="科技"><a href="#科技" class="headerlink" title="科技"></a>科技</h1><p>踏破铁鞋无觅处，得来全不费工夫。</p>
+<p>前些日子听讲座，演讲人破解了我心中的迷局。</p>
+<p>他当场展示了这间屋子里面所有人的用户画像，还做了聚类分析。对应手机号码或者电脑mac地址，分析结果可以勾勒出你的年龄、婚姻、家庭结构、收入等状况。</p>
+<p>而且对其中部分人，甚至还能说清楚TA是哪一家品牌商店或大型商场的常客。</p>
+<p>这一切，都是靠一个小巧玲珑的设备完成的。</p>
+<p>所有人都看呆了。</p>
+<p>在一个商场里，部署若干该设备，可以发现顾客是一个人来的，还是几个人一起来的。商场可以获知顾客习惯于逛哪些品牌，还可以分析店铺位置与客流关系。所有这一切都可以用可视化的图形甚至动画来形象展现。</p>
+<p>这并不是通过伪造基站来完成的。换言之，这种设备及其使用方式是合法的！</p>
+<p>具体到这次音乐节，我们来看看商家原本可以怎样做，既能提升信息收集的效率和转化率，同时还可以给大家更好的用户体验。</p>
+<p>首先，架设WiFi，在一进门的地方把WiFi连接信息公布给大家。猜猜看，100个人里面有几个人会选择不连接？他们是不是看过我的那篇《 为什么你不该用免费公共WiFi 》啊？</p>
+<p>然后呢？你迫不及待地问，我是不是去截获用户无线通讯数据啊？</p>
+<p>当然不是！你别老往违法乱纪的地方想好不好？</p>
+<p>你只需要确保用户进行了WiFi通讯就可以了。然后，那个微型设备就会发挥功效了。只要你跟它在一个WiFi局域网里，它就可以收集到你的唯一标识。</p>
+<p>然后，每一个商家只需要做几个小程序，关联自家的公众号即可。把小程序的二维码摆好，分别对应不同的小礼品。扫哪个二维码，就可以领取对应的礼品。</p>
+<p>这是个典型的实验经济学场景——面对真金白银（不一定多昂贵）的选项，用户会用行动透露自己的偏好。</p>
+<p>你会看到用户选择了矿泉水，还是气球，亦或是一个记事本儿。你会看到哪些用户转着圈浏览和领取各色玩具，这意味着这些家庭里孩子具有绝对的主导权。</p>
+<p>你不用等到用户回家后，过了几天再去联系和尝试建立关系。那时候人家恐怕连领过你的礼物都忘了。</p>
+<p>大数据在背后关联，可以即时分析。</p>
+<p>扫码领了礼品的用户经常去哪里？是宝马4S店，还是重庆小面馆？是四季酒店，还是如家？出门喜欢坐神州专车，还是骑小黄车？……</p>
+<p>有了这些数据，你还愁不能给用户画像，描绘他的消费水平和需求偏好吗？趁着他们还在里面刷手机（你以为家长来参加音乐节的时候是认真看节目的？），赶紧发优惠码啊！</p>
+<p>你问这些数据从哪里来？</p>
+<p>那个小巧的设备又不是只卖给了你一家。你获得的不只是本地数据的分析，还包括一个联网的云平台。用的商家越多，每个商家拥有的数据就越精准。这就是网络效应。</p>
+<p>这里说的，还只是线下数据哟。</p>
+<h1 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h1><p>拿到了这么多信息，你还犯愁如何从茫茫人海中锁定你的目标客户群吗？</p>
+<p>你还用雇一群人追着家长们跑来跑去，把大厅弄得那么拥挤、乱糟糟吗？</p>
+<p>我希望下次参加类似活动的时候。商家能长点儿心。别把物联网时代的数字营销，搞得跟中世纪的集市一般。</p>
+<p>科技，就是这么神奇。你跟它亲近，它可以给你带来很多的收益。你对它视而不见，会错过很多机遇。</p>
+<p>我猜猜你在想什么。</p>
+<p>如果你是商家，会窃喜之余，马上准备搞个这样的设备来用。</p>
+<p>如果你是个普通人，可能会对这种隐私侵犯充满忧虑，甚至怒不可遏。</p>
+<p>其实，你只是不知道而已。目前一线城市的豪华商场里，这样的设备早已广泛铺设。就连我们这二线城市，也确证已有大商场批量采用。结合你为了免费停车登记领取的会员卡，你的形象在服务器上很清晰。</p>
+<p>了解此事之后，我已经做出决策。下次去那家商场，我手机关机。</p>
+<p>你以为只有商场才会收集你的信息吗？呵呵。关于隐私信息可能泄露的其他场景，有可能让你吃惊不已。以后有机会我们再详谈。</p>
+<p>但是有一个观点，我可以提前透露给你。</p>
+<p>许多人并不怕商家获得自己的信息，尤其是年轻群体。但是这有2个前提，一是我把信息交给你，你得给我保管好，漏得跟筛子一样我就不高兴了；二是我给你信息，能交换实际的好处。</p>
+<p>好处不一定是钱。还有哪些？我请你先自行思考一下。</p>
+<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>你怎么看待这种新型的客户信息搜集方式？你会采用吗？你会做出防御对策吗？你的好朋友——手机——还会把你的哪些信息透露给别人？欢迎留言分享给大家，我们一起交流讨论。</p>
+<p>如果你的家人或朋友关注自己的隐私，也欢迎你在微信群或朋友圈里分享本文，让他们了解到个人信息可能被获取的途径。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/公众号写作：痛点与对策/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/公众号写作：痛点与对策/" itemprop="url">公众号写作：痛点与对策</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T22:12:16+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>面对资料搜集、片段拼接、图片上传和样式排版等公众号写作中的常见痛点，你该怎么办？阅读本文，可以让你写作公众号时少一分痛苦，多一分愉快。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-22415eb88cf82b4d.png" alt=""></p>
+<h1 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h1><p>公众号写作，是件痛并快乐的事儿。作者们会遇到以下几个常见的痛点：</p>
+<ol>
+<li>资料搜集；</li>
+<li>片段拼接；</li>
+<li>图片上传；</li>
+<li>样式排版。</li>
+</ol>
+<p>我之前写过好几篇相关的文章，为你介绍了MarkEditor, Ulysses, Bear, Marked2, MWeb等写作利器。希望他们曾经在公众号写作上为你提供了一些帮助。</p>
+<p>我一直在迭代改进公众号写作的流程。最近又发现了几样简单易用，功能强大，可以有效应对上述痛点的工具。通过本文分享给你，希望你写公众号的时候少一分痛苦，多一分愉快。</p>
+<h1 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a>卡片</h1><p>为了写出一篇好的公众号文章，累积素材是必须的。</p>
+<p>点滴积累素材和写作卡片的工具，我曾经推荐Evernote或者Bear。但是最近，我愈发体会到他们的重要问题。</p>
+<p>单纯资料搜集的时候还好，可当你打算对一张张卡片修改和拼接起来的时候，你只能看见树木，看不见森林。因为这些笔记软件的条目组织方式是<strong>线性</strong>的。</p>
+<p>笔记之间确实也可以通过链接相互交叉引用，但是这种关联的方式<strong>很不直观</strong>。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0cd057c6f945bec9.jpeg" alt=""></p>
+<p>我写作的时候，思维总是很发散。一会儿这里发现了问题，一会儿那里需要改动。如果每次都得去转换笔记条目，跳来跳去，一会儿就会觉得思路变得很混乱。</p>
+<p>所以，我需要一款工具，帮我在一个平面上摊开我的卡片，让我能以全局视角同时审视所有素材，而且可以自由地调整它们的顺序，修改其中的内容。</p>
+<p>我之前推荐过的Ulysses，在处理这个问题的时候，都很吃力。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-be57b00f1ad36f28.jpeg" alt=""></p>
+<p>如图所示，所有的卡片都在那里，你可以方便调整顺序，但是你无法同时关注到里面的细节。</p>
+<p>对于写短文，这还不算太大的问题。对于小说家或编剧来说，这可能会造成穿帮等硬伤。</p>
+<p>最近，我突然发现了一款可以解决这个痛点的工具。</p>
+<p>它可以帮你把各种素材，包括文字、图片、链接、主题、栏目等散落放置在一张无限大的画布上面，随便改，随便拼。这样素材的积累、拼接和排布都可以在一个工具里面完成，免去了你的搬运转换之苦。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0d7ad5f5ed25db49.jpeg" alt=""></p>
+<p>你不再用线性的思维来写作。非线性的思考方式，会带给你远距离联想的能力。帮助你文思泉涌，乐此不疲。</p>
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p>我写文章，比较喜欢用插图。但是你应该也体会过插图的痛苦。需要上传到某个图床，不但初始要设置，而且如果你开始写作时用了本地图片链接，那还需要转换为图床对应版本。</p>
+<p>有的时候，你费了九牛二虎之力，图都上传完了，也转换了链接，才发现图片体积过大。微信公众号里面的插图不要超过2M，否则大概率粘贴失败。这样一来，你还得重新压缩图片，再来一次繁琐的操作过程。</p>
+<p>可是，用这款工具，你丝毫也不用担心插图问题。因为本地图片可以直接拖拽上来，远程图片可以复制粘贴。所有图片都会存在该工具的云端。它的后台用的是AWS云存储，端到端加密。你不用担心图床提供商突然跑路，更不用怕有人窥探你的图片或文本内容。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-682ce95e7f2ead37.png" alt=""></p>
+<p>其实这个你应该不太担心吧，毕竟你写公众号不就是要发布的吗？</p>
+<p>一个偶然的机会，我发现这款工具居然还自动帮用户做了图片的压缩——所有的图片都保持在了2M以下，而且在公众号里显示效果都很清晰。</p>
+<p>你把内容写好、调整完，就可以导出为Markdown格式。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2f399edbad6005e3.jpeg" alt=""></p>
+<p>导出后，你用非线性方式愉快写作的成果，就变成了线性的文字，可以供人们阅读了。</p>
+<p>但是先别急着进入微信公众号发布内容。最好先预览一下结果，并且把图片转换成国内图床链接，不然在微信公众号发布的时候，图片的显示可能会遇到问题。</p>
+<p>啊？说了半天，还得自己传到国内图床？你耍我呢？</p>
+<p>不是，你不用手动完成这一工作，可以用简书。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e60cbacc65b2c757.png" alt=""></p>
+<p>简书对于Markdown的支持特别友好。它不仅可以让你预览自己的结果，申明与保护知识产权，还可以随时修改内容。要知道目前公众号的文章一旦发布，内容是只能删不能改的。</p>
+<p>简书上的朋友第一时间先睹为快，同时也用众包的方式帮你做了编辑、校对等工作。许多读者的留言质量很高，意见很中肯。</p>
+<p>你会发现，当你在简书发布文章的时候，系统会提示你正在上传图片。发布之后，你的文章Markdown图片链接就变成了简书版本的了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e85d0001d1a083f5.jpg" alt=""></p>
+<p>这个版本的Markdown内容请你存下来，因为用它发布公众号最合适。</p>
+<h1 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h1><p>排版很容易。</p>
+<p>你需要选择一个合适的css样式文件，帮你去操心哪里用几号字，什么标题用某种颜色，以及段间距是多少之类的琐碎事。</p>
+<p>你，充满创意的作者，本来就应该集中注意力做大事儿嘛。</p>
+<p>css的选择，就是个见仁见智的事儿了。我本人推荐2个人专门为公众号制作的css，一个是阳志平的，另一个是尹航的。</p>
+<p>搜索并且下载他们的css文件以后，请先在Chrome里面安装一个插件，叫做Markdown Here。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e7513ca2c20aa03f.png" alt=""></p>
+<p>下载之后，右键点击该插件图标，在弹出菜单里面单击“选项”按钮。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-c0ffee2059259136.jpeg" alt=""></p>
+<p>找到上图这个文本框，把你中意的css文件内容拷贝粘贴进去。</p>
+<p>准备工作至此都已经做好了。下面请你进入微信公众平台，把从简书复制下来的Markdown内容粘贴到正文，然后点击Markdown Here插件。</p>
+<p>你就会见识到奇迹发生的一刻了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-f7f711de6b42859e.jpg" alt=""></p>
+<p>写到这里，这篇文章完成了。一篇公众号文章的创作，本应如此简单。</p>
+<p>回顾一下，利用本文推荐的几样工具，我们分别解决了公众号写作中常见的几大痛点，即资料搜集、片段拼接、图片上传和样式排版问题。</p>
+<p>如果你身边的朋友也在写公众号，请你将这篇文章在群组或朋友圈分享给他们，让他们的写作过程变得更加轻松愉快。</p>
+<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>除了本文介绍的工具以外，你还在公众号写作与发布中使用过哪些其他的好工具？欢迎留言分享给大家，我们一起交流讨论。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/MOOC教学，什么最重要？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/28/MOOC教学，什么最重要？/" itemprop="url">MOOC教学，什么最重要？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T22:13:41+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>MOOC教学的关键，不在于录视频，也不在于做幻灯。最重要的是赋能。赋能的具体方法，是在认知资源和学习者之间，建立丰富而有效的链接。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-3df7ad5364c76c2a.png" alt=""></p>
+<h1 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h1><p>2017年7月，我参加了第四届中国MOOC大会。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-1a4e9896d861440c.jpeg" alt=""></p>
+<p>会议传达出一个强烈的信号——大规模的MOOC建设即将开始在全国推广了。资金、政策已经准备好，连试点工作都已经在福建和陕西等地完成了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-73171dfaf287a571.jpeg" alt=""></p>
+<p>相信用不了多久，你所在的学校也会开始鼓励老师们做MOOC。</p>
+<p>MOOC，是Massive Open Online Course的缩写，即大规模开放在线课程。</p>
+<p>自从2012年兴起以来，MOOC已经历经5年多的发展，相信对于这个概念，你已经不再陌生。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-237fda6698c9073d.jpeg" alt=""></p>
+<p>可是，如果明天学校分派你去做MOOC。你该怎么做？</p>
+<p>大部分人的第一反应，要么是赶紧改幻灯，要么是去化妆——我得录视频啊！</p>
+<p>专业的视频制作公司也是这么想的。</p>
+<p>这次会议可把他们忙坏了，一直在发名片、加微信，希望把所有潜在客户一网打尽。</p>
+<p>问了一下价格，每课时的视频录制，根据具体情况，大约1-2万元。</p>
+<p>有条件的学校，可能还会自建新的MOOC平台与MOOC联盟。这样需要的花费，至少还包括系统开发、云存储、视频直播等，当然还有不菲的运维成本。</p>
+<p>你先别忙着跑去化妆。容我问一句，MOOC教学，什么最重要？</p>
+<p>有些事情，如果定义上就没搞清楚，盲目去做的结果会造成资源的严重浪费。例如前几年同样轰轰烈烈建设起来的精品课，在这次与会专家的口中，99%将被直接丢弃掉。那都是钱啊！</p>
+<p>虽然制作MOOC的费用不会是授课老师自掏腰包，但是错误的方向有高昂的机会成本。你可能会因此错失MOOC浪潮带来的大好机会，只能做一个失落的旁观者。</p>
+<p>往正确的方向上前进，即便路走得慢一点，也比向着错误的方向上飞奔来得有用。</p>
+<p>所以，别急着录视频。让我们通过本文分析一下，MOOC教学中，最重要的究竟是什么呢？</p>
+<h1 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h1><p>自2013年起，我选修过多达数十门的MOOC课程。其中获得正式证书的有20多门，包括3门Coursera专项系列课程(Specialization)证书。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a6b8a1e0848efa83.jpeg" alt=""></p>
+<p>与许多老师不同，我学MOOC不是为了“偷艺”，即旁观一下别人怎么上MOOC。我是真真正正去做学生。因此，我从学生的真实角度感受到了许多不同MOOC教学方法带来的学习效果区别。</p>
+<p>此外，我还花钱上了一些在许多人看来不属于MOOC的课程。虽然现在MOOC也有许多收费了，但这些课程的价格，比一般意义上的MOOC要贵多了。</p>
+<p>例如李笑来的新生大学、阳志平的认知写作学等。我在罗胖的得到App上甚至获得了“得到大神”勋章。</p>
+<p>这么多不同类型的课程修下来，我得出的结论是：MOOC教学的关键，不在于录视频，也不在于做幻灯。最重要的是<strong>赋能</strong>。赋能的具体方法，是在认知资源和学习者之间，建立丰富而有效的<strong>链接</strong>。</p>
+<p>这个结论，你可能觉得过于抽象。</p>
+<p>下面让我们一起回顾一下从传统教学到MOOC的发展演化。我会带你从链接的角度，重新认识这个演化过程。</p>
+<p>我们提出的第一个问题是：传统的教学方法怎么了？</p>
+<h1 id="困局"><a href="#困局" class="headerlink" title="困局"></a>困局</h1><blockquote>
+<p>师者，所以传到授业解惑也。</p>
+</blockquote>
+<p>传统教学，就是通过教师，把认知传递给学生。</p>
+<p>传统的教学方式，运用了数千年。今天我们对它指手画脚，骂来骂去，实际上经常忽略了它的使用场景。</p>
+<p>传统教学的初衷，根本就不是用于现代学校教育的。它更适合师徒相传的一对一讨论式教学。不信，你看看《论语》记录的对话就好。在古时候，这种方式一直在私塾教育中应用。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-6c5f6027093a5017.png" alt=""></p>
+<p>有趣的是，直到今天，传统教学方式依然有广阔的市场。我说的不是学校课堂，而是大学生乐于兼职的家教行业。</p>
+<p>从事家教的，往往是低年级的大学生。他们根本就没有来得及接受教育学和教育心理学等必要师资培训。但是他们的教学效果却并不差。否则在这个竞争激烈、评价严苛的市场中，怎么可能长期挣得到钱？</p>
+<p>他们做的，其实就是从小到大学校老师传统课堂教学模式的翻版。</p>
+<p>为什么家教用传统教学方法没问题，在学校用起来就有问题呢？因为这是试图用手工方式实现工业化。</p>
+<p>有些人头脑中，总有一种误解。认为教育跟牧羊一样——一只羊是赶，两只羊也是放。在他们看来，好马会跑不吃草，小车不倒只管推。课堂上多放几个学生，不就跟家里吃饭来了客人，多放几双筷子一样吗？</p>
+<p>他们还会想当然地设定，所有学生的思考方式、兴趣点和学习进度都是一样的。因此，只要能给一个学生讲明白，其他人在旁边听了，自然也就明白了。</p>
+<p>你说的那是克隆人好不好？</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-08b9181667d273e3.png" alt=""></p>
+<p>一群地球人组成的群体，哪是这样同构的？每个人都有各自的特点。即便面对同样的老师，同样的授课内容，对不同知识点理解难易和吸收快慢也千差万别。</p>
+<p>北京大学许雅君教授在演讲中举过一个例子。她上课的时候，第一排正中间坐着个男生，低头抱着智能手机玩儿游戏。一节课手没有离开过屏幕。但是问他什么问题都能当场正确解答，一学期玩儿下来，最后考全班第二。</p>
+<p>听众发出笑声和赞叹声，说这个孩子真聪明！</p>
+<p>我听了心里很不是滋味。这门课的知识，那个男生明明只需要花5%的时间就能掌握，为什么非得要让他来上课啊？这时间把他扔在自习室或者图书馆，能学多少东西啊！</p>
+<p>也正是如此，许老师才笃定开始走上MOOC教学之路。</p>
+<p>老师原本只需要和少数学生建立强有力的双向链接。现在却必须和许多学生同时建立链接。链接的效果如何保证呢？</p>
+<p>一个现代学校里的班级，小班也该有20人，大班有50、60甚至更多。一个老师面对这么多学生，还得在规定的时间、规定的地点，完成必须的教学动作。试问老师能怎么办？</p>
+<p>没有责任心的老师只能照本宣科。因为他清楚，如果让学生自由提问，就没有下课的日子了。所以，他的课堂上，师生间原本双向的链接，变成了单向的输出。学生没有机会向老师提问，更不要说交流探讨了。</p>
+<p>好的老师会把上课讲授部分尽量化简，挤出来时间做个性化答疑。也就是挣扎着尽量维护更多链接的质量。</p>
+<p>为了达到这个目的，他就需要让学生来上课前，做好充分的准备工作。这种挣扎的结果，就是一次教学形式的显著变化——翻转课堂。</p>
+<h1 id="翻转"><a href="#翻转" class="headerlink" title="翻转"></a>翻转</h1><p> 在维基百科上，翻转课堂（Flipped classroom）定义如下：</p>
+<blockquote>
+<p>是一种新的教学模式……先由学生在家中看老师或其他人准备的课程内容，到学校时，学生和老师一起完成作业，并且进行问答讨论。由于学生及老师的角色对调，而在家学习，在学校完成作业的方式也和传统教学不同，因此称为“翻转课堂”。</p>
+</blockquote>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-3050e8a96e8143c5.png" alt=""></p>
+<p>这两年，“翻转课堂”跟随者“混合式教学”等概念一起火了起来，被认为具有良好的授课效果，而且是教育的未来方向。</p>
+<p>其实这个世界上，哪里有什么免费的午餐？</p>
+<p>翻转课堂并不是什么神迹(miracle)。它不过是在强力作用下，让学生在教师之外，又建立了其他通向认知资源的的链接。</p>
+<p>仔细想想，从小老师是不是就提醒过你要做课前预习？甚至还要家长监督签字？你坚持下来了吗？上大学的时候老师把目标提高了，让你“学会自学”。请问你真的学会了吗？</p>
+<p>大部分人可能跟我一样，答案都是否定的。那么你可能好奇，那些做了预习和自学的人收效如何呢？</p>
+<p>李笑来上中学的时候，开学之前一拿到新学期教科书，就先从头到尾看一遍。这样上课的时候，就可以专听那些有问题的环节，不明白再问老师。有时候不用问，就自然懂了。成绩一直名列前茅。</p>
+<p>多了一条通向认知的链接，效果就是不同。</p>
+<p>翻转课堂有效吗？</p>
+<p>不一定。</p>
+<p>站在链接视角来看，这个问题很容易理解——翻转课堂建立的链接，是参差不齐的。</p>
+<p>有求知欲，而且自学能力强的学生，一下子被解放了。不仅课前可以获得老师提供的完整学习路线图和载体资源，而且因为学有余力，还可以在课上充分讨论，甚至为别人讲解辅导。教是最好的学，这一点老师和学霸们都清楚。</p>
+<p>但是那些求知欲不强的学生，情况反而变得更糟糕了。因为他们课前根本就不会去看，或者不认真看老师布置的内容。这样不仅没有增加和载体之间的链接，甚至连原先和教师的单向链接都变得更弱了——老师默认学生课前学习了资料，所以对相关内容不再详细讲解，而是一带而过。这部分学生就更加听不懂，“从入门到放弃”的周期大大缩短了。</p>
+<p>所以，翻转课堂在不同的环境里，效果截然不同。所谓“橘生淮南则为橘，生于淮北则为枳”。</p>
+<p>但是，人们大都看不到硬币的另一面。</p>
+<p>有的老师，采用翻转课堂之后教学效果确实明显改善。于是信心大增。</p>
+<p>他们更加努力地建设课前学习的资源。除了书籍、论文之外，还尽量补充多媒体内容。例如语音、图像。有的老师，还会把自己上课的视频录制下来，作为资料提供给后面的学生们。</p>
+<p>几轮课下来，资源更加丰富了，教学效果的明显改善让名校教师们信心爆棚。</p>
+<p>他们会就此止步，把这种杀手级别的教学方式改革，仅仅用于课上这几十个学生吗？</p>
+<p>显然不会。他们的目标是改变世界。</p>
+<h1 id="开放"><a href="#开放" class="headerlink" title="开放"></a>开放</h1><p>互联网的特点是信息传播的成本大幅度降低。老师只需要把教学资源公布在网上，不仅本校的学生可以看，外校的学生也可以看。本世纪初年，MIT等名校开始宣布开放课程给全球学习者，敞开大门欢迎所有人。</p>
+<p>这些课程，已经具备了<strong>开放</strong>特性。从前你想学MIT教授的课程，是需要考试才能被择优录取的。现在，只要你有一台能联网的电脑，就可以“上课”了。</p>
+<p>从2006年到2011年间，我学习和浏览过若干门MIT的开放课程，亲眼目睹过平台上的资源是如何的参差不齐。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e5840b25f578034f.png" alt=""></p>
+<p>有的课程，例如6.001提供全套视频、练习和作业。有的课程却只有一些非常简单的幻灯和文字阅读材料。有的甚至只是告诉你书名，想看自己买去。</p>
+<p>教育者们兴高采烈，等着收获一次全球普及优质教育资源的硕果。这种热情，体现在字幕的翻译上。MIT的许多开放课程，都被翻译成了许多国家的文字。</p>
+<p>世界各国，也在纷纷建立本土的开放课程。试图把大师们的授课精华保留下来，利用网络造福所有学习者。</p>
+<p>但是效果怎么样？</p>
+<p>如果效果好，我们就不用对MOOC感兴趣了。</p>
+<p>原因在哪里？从链接角度上看，全球的学习者获得了和MIT等名校学生一样的载体链接，这固然是个进步；但是与此同时，他们和MIT的教师之间根本就没有建立起来链接。</p>
+<p>即便课程发布了教学视频，录像里的老师也不是老师，只是<strong>载体</strong>而已。</p>
+<p>那时候，已经有其他学校的老师试图采用混合式教学手段了。例如让学生课前学习MIT公开课里面视频和文字材料，上课讨论。</p>
+<p>这样不是刚好补齐了缺失的教师环节吗？效果是不是会非常好呢？</p>
+<p>未必。</p>
+<p>此时翻转课堂的问题暴露无遗——不是每个学校，都学霸遍地。</p>
+<p>近年来不同的科学研究，都得出了一致结论：好大学和差大学之间，师资水平的区别，远远不及学生总体求知欲望的区别。</p>
+<p>好大学里，“我要学”的人占多数。那些没有目标，而是“要我学”的人在同侪压力下，就不得不跟着跑，于是也学得好。这个事儿我非常有体会，有空细讲。</p>
+<p>差大学里，“要我学”的人占多数。那些有奋斗目标，坚持“我要学”的人在同侪压力下，根本飞不起来。时间长了，他们中的有些人也就懈怠了。</p>
+<p>所以，许多二、三流大学里，老师面临的困境是——学生们课前根本没有按照要求去读书和看视频。</p>
+<p>尤其是，学生们纷纷表示，不喜欢看MIT等名校的教学视频。</p>
+<p>理由听起来很简单而充分：</p>
+<p>视频里的老师在给其他人上课啊！又不是给我上，我为什么要看？</p>
+<p>于是，庞大的学习者群体无论是和教师，还是和载体，都没有真正建立有效的链接。</p>
+<p>因为缺乏必要的有效链接，MIT的开放课程搞了10年的实验，并没有如预期一般大获成功。</p>
+<p>2012年，换MOOC登场了。</p>
+<h1 id="在线"><a href="#在线" class="headerlink" title="在线"></a>在线</h1><p>你可以把MOOC的诞生归结为很多因素。例如硬件功能的提高，并发在线人数接纳能力的增强，以及数据分析和处理水平的改善等。</p>
+<p>然而，你可能忽略了，MOOC三大平台，即Coursera, Udacity和EdX，与MIT开放课间最大的区别，在于<strong>在线</strong>这一条。</p>
+<p>你可能觉得我在故弄玄虚——MIT的开放课程难道不是在线课吗？</p>
+<p>还真不算。</p>
+<p>什么叫做在线？不是课程录像在线，而是<strong>老师在线</strong>。</p>
+<p>录像放上去，老师就功成身退了？开什么玩笑？</p>
+<p>老师得在线掌控课程。</p>
+<p>掌控的方法是给大家出练习题、留作业、考试和答疑。总结起来，最重要的一条是，要有<strong>反馈</strong>。</p>
+<p>有了反馈，学习者才能清楚，自己做的到底对不对。</p>
+<p>有了答疑，学习者的疑问才真正有可能被高效地解决。</p>
+<p>由此，在线学习者才真正能通过载体和教师这两条链接，与认知搭建起有效联系。</p>
+<p>然而，这个模式在初始的时候，根本难以为继。</p>
+<p>猜猜为什么？</p>
+<p>因为老师们快要累死了。</p>
+<p>每一节课，都会涌现出许多的问题，毕竟学生人数是个庞大的基数。光是判作业和批改试卷，就足以让人崩溃了。</p>
+<p>你事先根本无法预料，究竟会有多少人来选课。可能一期的选课人数，超过你在学校一辈子教过的学生总数。</p>
+<p>有人说，那还不简单？可以用计算机判卷啊！</p>
+<p>对。可是你说的只是客观题。主观题怎么办？</p>
+<p>学生编了一段程序，你可以用电脑运行和评判。但如果学生写了一篇作文，你也要用电脑来判吗？</p>
+<p>面对世界各地的学生提出的各种疑问和要求（例如制作中文字幕），前文提到的许雅君教授累到突发耳聋，甚至有永久失聪的危险。休息了很长时间后，才恢复过来。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-4e0186b71f7da4d2.jpeg" alt=""></p>
+<p>这世界上，从来没有哪个老师是超人。这种磨砺，你真的做好打算尝试了吗？</p>
+<p>好在你不再需要面对这个恼人的问题了。因为它已经被解决了。</p>
+<p>猜猜看，老师们用了什么奇招？提示一下，还是和链接有关。</p>
+<h1 id="规模"><a href="#规模" class="headerlink" title="规模"></a>规模</h1><p>招数很简单。计算机网络中，称之为“分布式”。一个你可能更熟悉的名字，叫做P2P(Peer-to-Peer)。</p>
+<p>我们提到了学生和认知资源之间的两个链条，分别是教师和载体。站在学生的角度，链接比以往更多了，一切都很美好。但是站在教师的角度，情况就很糟糕。因为一个教师需要<strong>同时链接</strong>的，不再是一两个、几十个，而是无数个学生。</p>
+<p>教师就好比是服务器，上面放了一首歌。学生好比客户端，每个人都想下载这首歌。</p>
+<p>所有人蜂拥而上，到服务器这里争抢带宽来下载同一首歌曲。什么结果？服务器崩溃了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-61e48e80501fb5f8.png" alt=""></p>
+<p>在计算机网络界，解决的办法就是把客户端也都连接在了一起。这样，只要有一个人从服务器下载了这首歌的一部分，他就成了另一个源头，大家可以从他这里同时下载。</p>
+<p>每个人，既是下载者，也是上传者。这不就是那句“人人为我，我为人人”嘛？</p>
+<p>老师的角色，是规则制定者。他需要设计规则和制度，把学生们有效地联系在一起。例如设立讨论区。</p>
+<p>在讨论区里，学生的问题不只老师能看见，其他同学也能看见。一个问题抛出没多久，就会有学优生跑出来解答，或者有学困生跑出来“+1”了。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2975e84316af586b.png" alt=""></p>
+<p>有时候，两个学生可能还会因为不同的解法产生争议，于是你来我往，好不热闹。旁观者和后来的学习者也可以通过阅读甚至参与这些讨论对话，获得更为深刻的认知。</p>
+<p>老师（包括助教团队）当然还可以亲自答疑。但是只需要去解答那些没有其他学生能够解答的问题。说实话，这样的问题真是不多。</p>
+<p>不仅是答疑，即便考试也可以采用这种方式。</p>
+<p>例如我选修的Duke大学《统计学与R》课程。从头到尾全都是“Peer assessment”。每次不仅要交作业，而且必须至少评3个同学的作业，才能获得自己的作业分数。教学团队只需要负责仲裁就好。</p>
+<p>写到这时，不知为何我脑子里闪现出庄子那句“上如标枝，民如野鹿”。</p>
+<p>在这种同侪压力下，许多平时课堂上松懈倦怠的学生，也会精神百倍的。因为与线下课堂的相互评判不同，他知道评分时没人会碍于情面手下留情。</p>
+<p>简单的论坛和同侪评分规则设置，就在无数的学生节点间加入了许许多多的链接。知识可以来自于书本、录像，可以来自于老师、助教，也可以来自于无数的同学。学习者中真的是藏龙卧虎，有的创造性解答连老师看了，都拍案叫绝。</p>
+<h1 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h1><p>站在链接的角度，我们重新审视了MOOC发展演变的过程。</p>
+<p>MOOC的魔力，无非是学习者和认知间的链接发生了重构。但是为什么说这是一种“赋能”呢？</p>
+<p>MOOC并不能直接改变学生的求知欲。</p>
+<p>一个学生如果就是<strong>不想</strong>学数学，那他根本就不会来上你的数学MOOC，即便是被逼迫着来，也未必能顺利完成。</p>
+<p>但是MOOC却可以让想学习却学不好的学生改善境况。</p>
+<p>最著名的例子是可汗学院(Khan Academy)。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-9e7359bc76b0ee3d.png" alt=""></p>
+<p>Khan最初，只是在辅导自己的表亲。他的表亲——一个小姑娘——对于数学谈不上厌恶，而是彻底的恐惧。</p>
+<p>因为她从来就没有能学会过。</p>
+<p>从她原先的境况来说，接触到的载体是不够好的。她的教科书显然无法帮助自己提升数学能力。</p>
+<p>而且，不难推断，她平时接触的老师，也没有帮助她建立对于数学足够好的认知。</p>
+<p>Khan的手把手辅导教程，彻底改变了表亲的人生——在这里，她第一次和优质的认知资源载体发生了有效链接。数学成绩从此突飞猛进。</p>
+<p>MOOC让那些想学好一门课程，却没有足够的能力建立链接的人有了机会。如果你计算完成优秀课程获得证书的绝对人数，会发现已经非常可观。</p>
+<p>从赋能的角度讲，MOOC就是成功了。</p>
+<p>但理解了赋能和链接，我们就不必要对MOOC的通过率苛求。因为许多人注册了课程只是来尝试的，MOOC从原理上，就无法保证他们会一直坚持。</p>
+<p>因为赋能的特性，MOOC确实可以改变教育资源分配不均的现状，让许多经济不发达地区的人，可以享受到与一流教育资源<strong>链接的机会</strong>。</p>
+<p>作为老师，你真的不需要在视频和幻灯制作上花费<strong>过多</strong>的心思。对于赋能这个职责来说，它们当然有用，却不是最重要的。</p>
+<p>最重要的，是建立丰富而有效的链接。</p>
+<p>我们说说丰富这个词。</p>
+<p>链接的数目多了，自然是丰富。但同样，链接的类型多了，也是丰富。</p>
+<p>不是每个人都有那样的颜值、镜头感与表演天赋。何必非得在一件利国利民的好事儿上设立如此高的门槛呢？</p>
+<p>如果你嗓音好，可以做音频资料。把你的课程用充满磁性的语音展现给更多人。许多人的学习时间都是碎片化的，他们需要再跑步或排队的时候学习。这个时候，声音比视频更适合他们。</p>
+<p>如果你文笔好，可以写文章。把那些适合用文本表达的内容（例如计算机程序设计）清晰展示，让别人一步步上手跟着学会。</p>
+<p>如果你愿意分享，可以把自己找到的好教学资源链接给你的学生，甚至更多的人。让大家都有第一时间接触到优秀载体的机会。</p>
+<p>每个人，都可以用自己的方式，建立不同类型的链接，为MOOC的发展添砖加瓦。</p>
+<p>千万不要忘了，MOOC教学中，仅仅提供载体是不够的。你要建立和维护与学生间的链接，尤其要注意建立和巩固学生与学生之间的链接。惟其如此，你才可以声称自己在做的是MOOC。</p>
+<p>站在赋能的角度，我们没有必要泾渭分明地说哪些平台是MOOC，哪些不是。得到App是付费知识服务平台，但订阅专栏《薛兆丰的北大经济学课》算不算MOOC？《宁向东的清华管理学课》算不算MOOC？</p>
+<p>这些课程，确实让千千万万的普罗大众有机会用非常低的成本，体验到清华北大一流教授的课程内容体系。</p>
+<p>每周末，薛老师和宁老师都会亲自用音频来答疑。</p>
+<p>而且这些专栏都有留言区和学习小组，学员之间也有机会建立充分的链接关系。</p>
+<p>事物是纷繁复杂的。在其中我们应该有自己的思考和洞察。今天文章的结尾，我愿意将吴军先生《硅谷来信》中的一段文字分享给你。</p>
+<blockquote>
+<p>当大家投资都不理性时，你的机会就来了，当大家都在做表面文章时，你晋升的机会就到了。同样，当大家都在炒作概念时，就给予了你使用新思维改变一个现有产业的机会。</p>
+</blockquote>
+<p>祝近安！</p>
+<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>你学习过MOOC吗？你制作过MOOC吗？能否结合你的亲身经历，谈谈你认为MOOC教学中，什么最重要？欢迎留言，我们一起交流讨论。</p>
+<p>如果你身边有教师朋友，也欢迎你把这篇文章分享给他们，邀请他们一起参与到我们的讨论中来。</p>
 
           
         
@@ -1487,7 +2366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/09/如何用Python做中文分词？/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/08/Review_on_HIT_summer_school/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王树义">
@@ -1506,7 +2385,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/09/如何用Python做中文分词？/" itemprop="url">如何用Python做中文分词？</a></h1>
+                <a class="post-title-link" href="/2017/07/08/Review_on_HIT_summer_school/" itemprop="url">Review on HIT summer school</a></h1>
         
 
         <div class="post-meta">
@@ -1518,8 +2397,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T11:47:41+08:00">
-                2017-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T22:20:32+08:00">
+                2017-07-08
               </time>
             
 
@@ -1558,338 +2437,52 @@
       
         
           
-            <p>打算绘制中文词云图？那你得先学会如何做中文文本分词。跟着我们的教程，一步步用Python来动手实践吧。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-a645744bd7c669fc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>在《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文中，我们介绍了英文文本的词云制作方法。大家玩儿得可还高兴？</p>
-<p>文中提过，选择英文文本作为示例，是因为处理起来最简单。但是很快就有读者尝试用中文文本做词云了。按照前文的方法，你成功了吗？</p>
-<p>估计是不成功的。因为这里面缺了一个重要的步骤。</p>
-<p>观察你的英文文本。你会发现英文单词之间采用空格作为强制分隔符。</p>
-<p>例如：</p>
+            <p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-06c8a670a1c8038c.jpg" alt=""></p>
+<p>I took part in the summer school hosted by Harbin Institute of Technology. The Topic is “Big Data and Business Analysis”. Though it’s only the fifth day of the summer school when I wrote this review, I already got a lot of good experience from it. I want to share with you what I learned, and hope you can join the fantastic program too in the near future.</p>
+<h1 id="Problem-Driven"><a href="#Problem-Driven" class="headerlink" title="Problem-Driven"></a>Problem-Driven</h1><p>Data Science is popular. It is so popular that when you write some articles on this topic, it will draw a lot of attentions from the audience.</p>
+<p>I myself wrote several blog entries on WeChat public account. I talked about how to use Python to do some easy data science projects, such as word cloud drawing, sentiment analysis, decision trees, topic extraction and time series analysis, etc. They were popular on mass social media and websites for scholars. My articles on LDA was selected to the front page by one of the famous scholarly blogging websites .</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-343fe04bcc3bbd32.png" alt=""></p>
+<p>These are the topics I taught my students in class. My MLiS students were excited when they first learned these new methods and tools. I want to maintain their curiosity and drill into the next level of research method learning, so I made the instructions easy to follow. However, they got so confident that they showed me their thesis just one day before the mid-term check.</p>
+<p>I was dismayed while reading their thesis. They were totally tools-driven.  I don’t know who brought this famous expression up, but I remember Warren Buffett quoted it several times.</p>
 <blockquote>
-<p>Yes Minister is a satirical British sitcom written by Sir Antony Jay and Jonathan Lynn that was first transmitted by BBC Television between 1980 and 1984, split over three seven-episode series.</p>
+<p>To the one with a hammer, everything looks like a nail.</p>
 </blockquote>
-<p>但是，中文的文本就没有这种空格区隔了。为了做词云，我们首先需要知道中文文本里面都有哪些“词”。</p>
-<p>你可能觉得这根本不是问题——我一眼就能看出词和词之间的边界！</p>
-<p>对，你当然可以。你可以人工处理1句、100句，甚至是10000句话。但是如果给你100万句话呢？</p>
-<p>这就是人工处理和电脑自动化处理的最显著区别——规模。</p>
-<p>别那么急着放弃啊，你可以用电脑来帮忙。</p>
-<p>你的问题应该是：如何用电脑把中文文本正确拆分为一个个的单词呢？</p>
-<p>这种工作，专业术语叫做分词。</p>
-<p>在介绍分词工具及其安装之前，请确认你已经阅读过《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文，并且按照其中的步骤做了相关的准备工作，然后再继续依照本文的介绍一步步实践。</p>
-<h1 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h1><p>中文分词的工具有很多种。有的免费，有的收费。有的在你的笔记本电脑里就能安装使用，有的却需要联网做云计算。</p>
-<p>今天给大家介绍的，是如何利用Python，在你的笔记本电脑上，免费做中文分词。</p>
-<p>我们采用的工具，名称很有特点，叫做“ <a href="https://github.com/fxsjy/jieba" target="_blank" rel="external">结巴分词</a> ”。</p>
-<p>为什么叫这么奇怪的名字？</p>
-<p>读完本文，你自己应该就能想明白了。</p>
-<p>我们先来安装这款分词工具。回到你的“终端”或者“命令提示符”下。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-c892d9c9a1f4c48c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>进入你之前建立好的demo文件夹。</p>
-<p>输入以下命令：</p>
-<pre><code>pip install jieba
-</code></pre><p>好了，现在你电脑里的Python已经知道该如何给中文分词了。</p>
-<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>在《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文中，我们使用了英剧”Yes, minister“的维基百科介绍文本。这次我们又从维基百科上找到了这部英剧对应的中文页面。翻译名称叫做《是，大臣》。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-86826fac32d7b22f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>将网页正文拷贝下来之后，存入文本文件yes-minister-cn.txt，并且将这个文件移动到我们的工作目录demo下面。</p>
-<p>好了，我们有了用于分析的中文文本数据了。</p>
-<p>先别忙着编程序。正式输入代码之前，我们还需要做一件事情，就是下载一份中文字体文件。</p>
-<p>请到 <a href="https://s3-us-west-2.amazonaws.com/notion-static/b869cb0c7f4e4c909a069eaebbd2b7ad/simsun.ttf" target="_blank" rel="external">这个网址</a> 下载simsun.ttf。</p>
-<p>下载后，将这个ttf字体文件也移动到demo目录下，跟文本文件放在一起。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>在命令行下，执行：</p>
-<pre><code>jupyter notebook
-</code></pre><p>浏览器会自动开启，并且显示如下界面。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-3e8c237c162a0c3b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这里还有上一次词云制作时咱们的劳动成果。此时目录下多了一个文本文件，是”Yes, Minister”的中文介绍信息。</p>
-<p>打开这个文件，浏览一下内容。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-8970161a6b032583.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>我们确认中文文本内容已经正确存储。</p>
-<p>回到Jupyter笔记本的主页面。点击New按钮，新建一个笔记本(Notebook)。在Notebooks里面，请选择Python 2选项。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-7d4e976011fd89cb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>系统会提示我们输入Notebook的名称。为了和上次的英文词云制作笔记本区别，就叫它wordcloud-cn好了。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-186938cdd5fccc95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>我们在网页里唯一的代码文本框里，输入以下3条语句。输入后，按Shift+Enter键执行。</p>
-<pre><code>filename = &quot;yes-minister-cn.txt&quot;
-with open(filename) as f:
- mytext = f.read()
-</code></pre><p>然后我们尝试显示mytext的内容。输入以下语句之后，还是得按Shift+Enter键执行。</p>
-<pre><code>print(mytext)
-</code></pre><p>显示的结果如下图所示。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-327c7486e42e8630.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>既然中文文本内容读取没有问题，我们就开始分词吧。输入以下两行语句：</p>
-<pre><code>import jieba
-mytext = &quot; &quot;.join(jieba.cut(mytext))
-</code></pre><p>系统会提示一些信息，那是结巴分词第一次启用的时候需要做的准备工作。忽略就可以了。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-e222c3190027dcf5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>分词的结果如何？我们来看看。输入：</p>
-<pre><code>print(mytext)
-</code></pre><p>你就可以看到下图所示的分词结果了。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-4ff5ee35e72f6834.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>单词之间已经不再紧紧相连，而是用空格做了区隔，就如同英文单词间的自然划分一样。</p>
-<p>你是不是迫不及待要用分词后的中文文本作词云了？</p>
-<p>可以，输入以下语句：</p>
-<pre><code>from wordcloud import WordCloud
-wordcloud = WordCloud().generate(mytext)
-%pylab inline
-import matplotlib.pyplot as plt
-plt.imshow(wordcloud, interpolation=&apos;bilinear&apos;)
-plt.axis(&quot;off&quot;
-</code></pre><p>激动地期待着中文词云的出现？</p>
-<p>可惜，你看到的词云是这个样子的。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-e25275c4b244baba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>你是不是非常愤怒，觉得这次又掉坑里了？</p>
-<p>别着急，出现这样的结果，并不是分词或者词云绘制工具有问题，更不是因为咱们的教程步骤有误，只是因为字体缺失。词云绘制工具wordcloud默认使用的字体是英文的，不包含中文编码，所以才会方框一片。解决的办法，就是把你之前下载的simsun.ttf，作为指定输出字体。</p>
-<p>输入以下语句：</p>
-<pre><code>from wordcloud import WordCloud
-wordcloud = WordCloud(font_path=&quot;simsun.ttf&quot;).generate(mytext)
-%pylab inline
-import matplotlib.pyplot as plt
-plt.imshow(wordcloud, interpolation=&apos;bilinear&apos;)
-plt.axis(&quot;off&quot;)
-</code></pre><p>这次你看到的输出图形就变成了这个样子：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-e48acc2dc20d6495.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这样一来，我们就通过中文词云的制作过程，体会到了中文分词的必要性了。</p>
-<p>这里给你留个思考题，对比一下此次生成的中文词云，和上次做出的英文词云：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/64542-487a6d2016e6bf55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>这两个词云对应的文本都来自维基百科，描述的是同样一部剧，它们有什么异同？从这种对比中，你可以发现维基百科中英文介绍内容之间，有哪些有趣的规律？</p>
-<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>掌握了本方法后，你自己做出了一张什么样的中文词云图？除了做词云以外，你还知道中文分词的哪些其他应用场景？欢迎留言，分享给大家。我们共同交流讨论。</p>
-<p>如果你对我的文章感兴趣，欢迎点赞，并且微信关注和置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
-<p>如果本文可能对你身边的亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。</p>
-<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><ul>
-<li><a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/d50a14541d01" target="_blank" rel="external">如何用Python做情感分析？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/4ea083874df4" target="_blank" rel="external">如何用Python做舆情时间序列可视化？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/67a71e366516" target="_blank" rel="external">贷还是不贷：如何用Python和机器学习帮你决策？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/fdde9fc03f94" target="_blank" rel="external">如何用Python从海量文本抽取主题？ - 简书</a></li>
-</ul>
-<h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p>王树义，大学教师，终身学习者。稍微懂一点儿写作、演讲、Python和机器学习。欢迎微信关注并置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/如何用Python做词云？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王树义">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="玉树芝兰">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/如何用Python做词云？/" itemprop="url">如何用Python做词云？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T11:24:37+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>临渊羡鱼，不如退而结网。我们步步为营，从头开始帮助你用Python做出第一张词云图来。欢迎尝试哦！</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-8c92c9c3b5c09561.jpg" alt=""></p>
-<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>在大数据时代，你经常可以在媒体或者网站上看到一些非常漂亮的信息图。</p>
-<p>例如这个样子。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-04049f9471322a43.jpg" alt=""></p>
-<p>或是这个样子的。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-59cf2c6c04d97cfc.jpg" alt=""></p>
-<p>看过之后你有什么感觉？想不想自己做一张出来？</p>
-<p>如果你的答案是肯定的，我们就不要拖延了，今天就来一步步从零开始做个词云分析图。当然，做为基础的词云图，肯定比不上刚才那两张信息图酷炫。不过不要紧，好的开始是成功的一半嘛。食髓知味，后面你就可以自己升级技能，进入你开挂的成功之路。</p>
-<p>网上教你做信息图的教程很多。许多都是利用了专用工具。这些工具好是好，便捷而强大。只是它们功能都太过专一，适用范围有限。今天我们要尝试的，是用通用的编程语言Python来做词云。</p>
-<p>Python是一种时下很流行的编程语言。你不仅可以用它做数据分析和可视化，还能用来做网站、爬取数据、做数学题、写脚本替你偷懒……</p>
-<p>知道豆瓣吗？它一开始就是用Python写的。</p>
-<p>在目前的编程语言热度排序里，Python屈居第四（当然，很多人不同意，所以编程语言的排行榜有许多，你懂的）。但看问题要用发展眼光。随着数据科学的发展，Python有爆发的趋势。早点儿站上风口，很有益处。</p>
-<p>如果你之前没有编程基础，没关系。从零开始，意味着我会教你如何安装Python运行环境，一步步完成词云图。希望你不要限于浏览，而是亲自动手尝试一番。到完成的那一步，你不仅可以做出第一张词云图，而且这还将是你的第一个有用的编程作品。</p>
-<p>心动了？那咱们就开始吧。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>首先，我们需要安装Python运行环境。</p>
-<p>如果你用的是macOS，那么你的系统里面实际已经预装好了Python。</p>
-<p>然而我们要使用到许多扩展包的功能。因此最好安装一个Python工具套装。只需要一次安装，以后大部分的功能就都已集成了。不必每次使用新功能，都去零敲碎打地安装新包了。</p>
-<p>Python的套装有许多种，这里推荐给大家anaconda。因为经过我4年多的尝试与对比，感觉这款软件包的安装更为便捷，扩展包的涵盖范围与结构更合理。</p>
-<p>请你到 <a href="https://www.continuum.io/downloads" target="_blank" rel="external">这个网址</a> 下载anaconda套装。下拉网页找到下载位置。根据你的操作系统类型选择合适的版本。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-24d1ceeca6147ab6.jpg" alt=""></p>
-<p>因为我的系统是macOS，所以网站直接给我推荐的就是macOS系统版本。但如果你用的是Windows或Linux，请切换到相应的标签页上面。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-b3a113634bdc5874.jpg" alt=""></p>
-<p>不管你用的是哪个操作系统，请注意右侧的两个按钮，分别对应Python 2.X和3.X版本。有人一定很纳闷，既然有新的版本，我凭什么用旧的？</p>
-<p>不是这样的。到2020年之前，Python的两个版本会一直并存。Python的开发者确实希望大家升级切换到3.X版本。可惜目前3.X版本兼容的扩展包数量比2.X版本要少，尤其是涉及到数据科学类的软件包，就尤其明显。所以如果你是初学者，我建议你下载2.X（目前是2.7)版本，这样在以后的使用中，可能遇到的问题会少一些。等你运用熟练了，再迁移到3.X版本不迟。相信我，到那时你会很快适应新版本的。</p>
-<p>下载后，执行安装文件就行了。</p>
-<p>根据你的电脑运行速度不同，安装的时间长短不等。耐心点儿，只需要等这一次嘛。</p>
-<p>安装完毕之后，请你安装一个“现代化”浏览器。如果你用的是macOS，那么系统自带的Safari就挺好。其他的选择包括Firefox和Google Chrome。</p>
-<p>请安装上述浏览器之一，然后将其设置为系统默认的浏览器。</p>
-<p>好了，下面请进入命令行模式。</p>
-<p>在macOS和Linux下，你需要开启一个终端(terminal)。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-af606b75270fd052.jpg" alt=""></p>
-<p>如果是Windows，请打开“开始”-“附件”-“命令提示符”。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-2f7d062533d00741.png" alt=""></p>
-<p>键入以下命令：</p>
-<pre><code>mkdir demo
-cd demo
-</code></pre><p>好了，你现在有一个专用的目录，叫做demo了。请到macOS的Finder或者Windows的“我的电脑”里面，找到这个目录并且打开它。</p>
-<p>回到终端下面，macOS或者Linux用户请键入以下命令：</p>
-<pre><code>pip install wordcloud
-</code></pre><p>macOS会提示你先安装XCode命令行工具，你按照默认设置一步步进行就可以了。但是请注意，务必在WiFi环境下安装。如果你用的是4G流量，那你可要破费一笔了。</p>
-<p>如果你用的是Windows，那么为了使用这个词云包，就稍微麻烦一些，你需要到 <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud" target="_blank" rel="external">这里</a> 下载 wordcloud‑1.3.1‑cp27‑cp27m‑win32.whl 这个文件。下载后将它拖拽到你的demo目录里。</p>
-<p>在命令行下，先执行：</p>
-<pre><code>pip install wheel
-</code></pre><p>然后，再执行：</p>
-<pre><code>pip install wordcloud‑1.3.1‑cp27‑cp27m‑win32.whl
-</code></pre><p>好了，我们需要的全部Python运行环境终于装好了。</p>
-<p>请务必按照上述步骤执行，确保每一步都已经顺利完成。否则一旦遗漏，后面运行程序会报错。</p>
-<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>词云分析的对象，是文本。</p>
-<p>理论上讲，文本可以是各种语言的。英文、中文、法文、阿拉伯文……</p>
-<p>为了简便，我们这里以英文文本为例。你可以随意到网上找一篇英文文章作为分析对象。我特别喜欢英剧”Yes, minister”，所以到维基百科上找到了这部剧的介绍词条。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0d5de443d1f1279b.jpg" alt=""></p>
-<p>我把其中的正文文字部分拷贝了下来，存储为一个文本文件，叫做yes-minister.txt。</p>
-<p>把这个文件挪动到我们的工作目录demo里。</p>
-<p>好了，文本数据已经准备好了。开始进入编程的魔幻世界吧！</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>在命令行下，执行：</p>
-<pre><code>jupyter notebook
-</code></pre><p>浏览器会自动开启，并且显示如下界面。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-56dc538ceab804a1.jpg" alt=""></p>
-<p>这就是咱们刚才的劳动成果——安装好的运行环境了。我们还没有编写程序，目录下只有一个刚才生成的文本文件。</p>
-<p>打开这个文件，浏览一下内容。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0cf86a03c446fc0c.jpg" alt=""></p>
-<p>回到Jupyter笔记本的主页面。我们点击New按钮，新建一个笔记本(Notebook)。在Notebooks里面，请选择Python 2选项。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-6a658c6964ea6292.jpg" alt=""></p>
-<p>系统会提示我们输入Notebook的名称。程序代码文件的名称，你可以随便起。但是我建议你起一个有意义的名字，将来好方便查找。由于我们要尝试词云，就叫它wordcloud好了。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-b4cea19bcf9bd026.jpg" alt=""></p>
-<p>然后就出现了一个空白的笔记本，供我们使用了。我们在网页里唯一的代码文本框里，输入以下3条语句。请务必逐字根据示例代码输入，空格数量都不可以有差别。尤其注意第三行，用4个空格，或者1个Tab开始。输入后，按Shift+Enter键，就可以执行了。</p>
-<pre><code>filename = &quot;yes-minister.txt&quot;
-with open(filename) as f:
- mytext = f.read()
-</code></pre><p>没有任何结果啊。</p>
-<p>对，因为我们这里没有任何输出动作，程序只是打开了你的yes-minister.txt文本文件，把里面的内容都读了出来，存储到了一个叫做mytext的变量里面。</p>
-<p>然后我们尝试显示mytext的内容。输入以下语句之后，还是得按Shift+Enter键，系统才会实际执行该语句。</p>
-<pre><code>mytext
-</code></pre><p>之后的步骤里，也千万不要忘了这一确认执行动作。</p>
-<p>显示的结果如下图所示。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e2c51352c1ac9899.jpg" alt=""></p>
-<p>嗯，看来mytext变量里存储的文本就是我们从网上摘来的文字。到目前为止，一切正常。</p>
-<p>然后我们呼唤(import)词云包，利用mytext中存储的文本内容来制造词云。</p>
-<pre><code>from wordcloud import WordCloud
-wordcloud = WordCloud().generate(mytext)
-</code></pre><p>这时程序可能会报警。别担心。警告(warning)不影响程序的正常运行。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-f84986a50221711e.jpg" alt=""></p>
-<p>此时词云分析已经完成了。你没看错，制作词云的核心步骤只需要这2行语句，而且第一条还只是从扩展包里找外援。但是程序并不会给我们显示任何东西。</p>
-<p>说好了的词云呢？折腾了这么半天，却啥也没有，你蒙人吗？！</p>
-<p>别激动。输入下面4行语句后，就是见证奇迹发生的时刻了。</p>
-<pre><code>%pylab inline
-import matplotlib.pyplot as plt
-plt.imshow(wordcloud, interpolation=&apos;bilinear&apos;)
-plt.axis(&quot;off&quot;)
-</code></pre><p>运行结果如图所示：</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-e61d788cd0c46ac3.jpg" alt=""></p>
-<p>不用那么兴奋嘛。</p>
-<p>你可以在词云图片上单机鼠标右键，用“图片另存为”功能导出。</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-3a90b4476f094bf1.png" alt=""></p>
-<p>通过这张词云图，我们可以看到不同单词和词组出现的频率高低差别。高频词的字体明显更大，而且颜色也很醒目。值得说明的是，最显眼的单词Hacker并不是指黑客，而是指这部剧的主角之一——哈克首相。</p>
-<p>包含程序完整代码的ipynb文件，我也分享了出来，你可以从 <a href="https://s3-us-west-2.amazonaws.com/notion-static/0067946616b34e2885636816b1cb1a6a/wordcloud.ipynb" target="_blank" rel="external">这里</a> 下载。</p>
-<p>希望你在尝试过程中一切顺利。对自己生成的词云图满意吗？如果你不满意，也不要紧，可以挖掘wordcloud软件包的其他高级功能。尝试一下，看自己能不能做出这样的词云图来？</p>
-<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-be1f21209142a4c8.jpg" alt=""></p>
-<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>学完了本方法后，你做出了一张什么样的词云图？除了本文介绍的方法以外，你还知道哪些便捷地制作词云或其他信息图的方式？欢迎留言，分享给大家。我们共同交流讨论。</p>
-<p>如果你对我的文章感兴趣，欢迎点赞，并且微信关注和置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
-<p>如果本文可能对你身边的亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。</p>
-<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><ul>
-<li><a href="http://www.jianshu.com/p/721190534061" target="_blank" rel="external">如何用Python做中文分词？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/d50a14541d01" target="_blank" rel="external">如何用Python做情感分析？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/4ea083874df4" target="_blank" rel="external">如何用Python做舆情时间序列可视化？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/67a71e366516" target="_blank" rel="external">贷还是不贷：如何用Python和机器学习帮你决策？ - 简书</a></li>
-<li><a href="http://www.jianshu.com/p/fdde9fc03f94" target="_blank" rel="external">如何用Python从海量文本抽取主题？ - 简书</a></li>
-</ul>
-<h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p>王树义，大学教师，终身学习者。稍微懂一点儿写作、演讲、Python和机器学习。欢迎微信关注并置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-f058f7ab83158ca1.jpg" alt=""></p>
+<p>Dr. Arun Rai, the Editor-in-Chief of <em>MIS Quarterly</em> showed me the problem vividly with a picture talking about “street light effect”.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-0af742ac969b4edf.jpg" alt=""></p>
+<p>Good research should be problem-driven instead of tools-driven or method-driven. If your research is not problem-driven, how to deal with the problem?</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-cf87608f1a5611dd.jpg" alt=""></p>
+<p>Alok Gupta, the Editor-in-Chief of ISR gave us another advice on this issue — attend every class talking about research method in graduate school. In this way, you will have a toolbox instead of just a hammer.  Define your research question first, talk with your colleagues or visitors before you dive into it.</p>
+<p>I totally agree with him.</p>
+<h1 id="Hands-on"><a href="#Hands-on" class="headerlink" title="Hands-on"></a>Hands-on</h1><p>I learned how to use STATA and R to do different kinds of regression models in the summer school from Dr. Anindya Ghose, the world famous scholar and data scientist.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-02375350424eeca7.jpg" alt=""></p>
+<p>Dr. Ghose gave us 5 different lectures (16 hours in total). Not only did he show us how the algorithmic advertisement ecosystem works, but used concrete example to teach us how to use various kinds of regression models to analyze different business scenarios as well.</p>
+<p>I learned statistics and R systematically from Coursera courses produced by Duke University and did tons of exercise. However, it’s the first time I realized when and why shall we use <code>log()</code> on continuous variables in OLR. I found STATA very easy to use and Dr. Ghose corrected several mistakes in my R models.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-a54ff1c0264d4440.jpg" alt=""></p>
+<h1 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h1><p>The best experience is to get instant feedback from the top scholars in the world.</p>
+<p>In the Q&amp;A session, I asked different speakers a lot of questions.</p>
+<p>For instance, I used LDA in my researches, but I was not so sure about the result, for the algorithm asks the researcher to set the parameters arbitrarily.</p>
+<p>Dr. Rai solved my problem with a very smart solution: show the result to field experts, and tell them it’s <em>my colleague’s</em> work.</p>
+<p>I used simulation methods in my series studies on fake information diffusion control on social media. A reviewer once criticized on my agent settings. To him, the rule based agent was too simple. I asked Dr. Gupta if I could use deep learning to replace the simple rules of agents. He gave me a positive answer under certain conditions. I found his answer very valuable.</p>
+<p>My current research focuses on privacy issues on social media platforms. So I was interested when Dr. Ghose talked about the companies which can trace customer behavior on individual level. Dr. Ghose’s answer (also in his new book, TAP: unlocking the mobile economy) opened my eyes and give me new thoughts on the following research works.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-baba34c976f82699.jpg" alt=""></p>
+<p>Not only the instructors answered my question face to face. Some of them emailed me and gave me resources to follow up.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-b6d878b56362e015.jpg" alt=""></p>
+<p>To tell the truth, I never expected the top scholars in the world were so warm-hearted and eager to help. I was moved deeply.</p>
+<h1 id="Cooperation"><a href="#Cooperation" class="headerlink" title="Cooperation"></a>Cooperation</h1><p>In HIT summer school, I am no longer a college professor, but only an elder student. In my class, there are more than 20 selected professors and managers from nation wide.</p>
+<p>We had a busy but good time in Harbin. The ice-breaking activities went smoothly on Central Street and Saint Sophia Cathedral.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/temp_atom-fde31e37.png" alt=""></p>
+<p>We got together and discussed a lot of different topics in a lovely local bar in the evenings.</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/64542-bf6d2d636e8a3253.jpg" alt=""></p>
+<p>The work load was heavy, but we succeeded in helping each other to get through the problems in learning and got the concepts and practical methods from the lecturers.</p>
+<p>As we came from different regions and had various kinds of backgrounds, soon we found a lot of opportunities to cooperate, both in the academic world and the industries as well.</p>
+<p>We organized as a strong study group and made a lot of (good) peer pressure on each other. Without my classmates’ encouragement and help, I never expected I will finish my summer school report in so many words.</p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>I really appreciate the efforts made by teachers and students from Harbin Institute of Technology. Thanks to them, I had this amazing opportunity to meet so many fantastic scholars and colleagues.</p>
+<p>When I go back to Tianjin, I will help HIT to promote this program. Hope more and more professors and students can join the summer school in the future and have a marvelous experience.</p>
+<p>Big Data is a Big issue. Hope the HIT summer school on <em>Big Data and Business Analytics</em> become more and more successful!</p>
+<p><img src="http://oejqwrqkh.bkt.clouddn.com/temp_atom-7596fcf6.png" alt=""></p>
+<p>Thank you, HIT!</p>
+<p>Shuyi Wang<br>Tianjin Normal University</p>
 
           
         
@@ -1928,6 +2521,10 @@ plt.axis(&quot;off&quot;)
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1974,7 +2571,7 @@ plt.axis(&quot;off&quot;)
             
               <a href="/archives">
             
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
