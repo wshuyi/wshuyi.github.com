@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="打算绘制中文词云图？那你得先学会如何做中文文本分词。跟着我们的教程，一步步用Python来动手实践吧。  需求在《如何用Python做词云》一文中，我们介绍了英文文本的词云制作方法。大家玩儿得可还高兴？ 文中提过，选择英文文本作为示例，是因为处理起来最简单。但是很快就有读者尝试用中文文本做词云了。按照前文的方法，你成功了吗？ 估计是不成功的。因为这里面缺了一个重要的步骤。 观察你的英文文本。你会发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Python做中文分词？">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/如何用Python做中文分词？/index.html">
+<meta property="og:site_name" content="玉树芝兰">
+<meta property="og:description" content="打算绘制中文词云图？那你得先学会如何做中文文本分词。跟着我们的教程，一步步用Python来动手实践吧。  需求在《如何用Python做词云》一文中，我们介绍了英文文本的词云制作方法。大家玩儿得可还高兴？ 文中提过，选择英文文本作为示例，是因为处理起来最简单。但是很快就有读者尝试用中文文本做词云了。按照前文的方法，你成功了吗？ 估计是不成功的。因为这里面缺了一个重要的步骤。 观察你的英文文本。你会发">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-a645744bd7c669fc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-c892d9c9a1f4c48c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-86826fac32d7b22f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-3e8c237c162a0c3b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-8970161a6b032583.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-7d4e976011fd89cb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-186938cdd5fccc95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-327c7486e42e8630.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-e222c3190027dcf5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-4ff5ee35e72f6834.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-e25275c4b244baba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-e48acc2dc20d6495.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/64542-487a6d2016e6bf55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-02T03:48:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用Python做中文分词？">
+<meta name="twitter:description" content="打算绘制中文词云图？那你得先学会如何做中文文本分词。跟着我们的教程，一步步用Python来动手实践吧。  需求在《如何用Python做词云》一文中，我们介绍了英文文本的词云制作方法。大家玩儿得可还高兴？ 文中提过，选择英文文本作为示例，是因为处理起来最简单。但是很快就有读者尝试用中文文本做词云了。按照前文的方法，你成功了吗？ 估计是不成功的。因为这里面缺了一个重要的步骤。 观察你的英文文本。你会发">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/64542-a645744bd7c669fc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/如何用Python做中文分词？/"/>
+
+
+
+
+
+  <title>如何用Python做中文分词？ | 玉树芝兰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玉树芝兰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/如何用Python做中文分词？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王树义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉树芝兰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何用Python做中文分词？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T11:47:41+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>打算绘制中文词云图？那你得先学会如何做中文文本分词。跟着我们的教程，一步步用Python来动手实践吧。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-a645744bd7c669fc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>在《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文中，我们介绍了英文文本的词云制作方法。大家玩儿得可还高兴？</p>
+<p>文中提过，选择英文文本作为示例，是因为处理起来最简单。但是很快就有读者尝试用中文文本做词云了。按照前文的方法，你成功了吗？</p>
+<p>估计是不成功的。因为这里面缺了一个重要的步骤。</p>
+<p>观察你的英文文本。你会发现英文单词之间采用空格作为强制分隔符。</p>
+<p>例如：</p>
+<blockquote>
+<p>Yes Minister is a satirical British sitcom written by Sir Antony Jay and Jonathan Lynn that was first transmitted by BBC Television between 1980 and 1984, split over three seven-episode series.</p>
+</blockquote>
+<p>但是，中文的文本就没有这种空格区隔了。为了做词云，我们首先需要知道中文文本里面都有哪些“词”。</p>
+<p>你可能觉得这根本不是问题——我一眼就能看出词和词之间的边界！</p>
+<p>对，你当然可以。你可以人工处理1句、100句，甚至是10000句话。但是如果给你100万句话呢？</p>
+<p>这就是人工处理和电脑自动化处理的最显著区别——规模。</p>
+<p>别那么急着放弃啊，你可以用电脑来帮忙。</p>
+<p>你的问题应该是：如何用电脑把中文文本正确拆分为一个个的单词呢？</p>
+<p>这种工作，专业术语叫做分词。</p>
+<p>在介绍分词工具及其安装之前，请确认你已经阅读过《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文，并且按照其中的步骤做了相关的准备工作，然后再继续依照本文的介绍一步步实践。</p>
+<h1 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h1><p>中文分词的工具有很多种。有的免费，有的收费。有的在你的笔记本电脑里就能安装使用，有的却需要联网做云计算。</p>
+<p>今天给大家介绍的，是如何利用Python，在你的笔记本电脑上，免费做中文分词。</p>
+<p>我们采用的工具，名称很有特点，叫做“ <a href="https://github.com/fxsjy/jieba" target="_blank" rel="external">结巴分词</a> ”。</p>
+<p>为什么叫这么奇怪的名字？</p>
+<p>读完本文，你自己应该就能想明白了。</p>
+<p>我们先来安装这款分词工具。回到你的“终端”或者“命令提示符”下。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-c892d9c9a1f4c48c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>进入你之前建立好的demo文件夹。</p>
+<p>输入以下命令：</p>
+<pre><code>pip install jieba
+</code></pre><p>好了，现在你电脑里的Python已经知道该如何给中文分词了。</p>
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>在《<a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云</a>》一文中，我们使用了英剧”Yes, minister“的维基百科介绍文本。这次我们又从维基百科上找到了这部英剧对应的中文页面。翻译名称叫做《是，大臣》。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-86826fac32d7b22f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>将网页正文拷贝下来之后，存入文本文件yes-minister-cn.txt，并且将这个文件移动到我们的工作目录demo下面。</p>
+<p>好了，我们有了用于分析的中文文本数据了。</p>
+<p>先别忙着编程序。正式输入代码之前，我们还需要做一件事情，就是下载一份中文字体文件。</p>
+<p>请到 <a href="https://s3-us-west-2.amazonaws.com/notion-static/b869cb0c7f4e4c909a069eaebbd2b7ad/simsun.ttf" target="_blank" rel="external">这个网址</a> 下载simsun.ttf。</p>
+<p>下载后，将这个ttf字体文件也移动到demo目录下，跟文本文件放在一起。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>在命令行下，执行：</p>
+<pre><code>jupyter notebook
+</code></pre><p>浏览器会自动开启，并且显示如下界面。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-3e8c237c162a0c3b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这里还有上一次词云制作时咱们的劳动成果。此时目录下多了一个文本文件，是”Yes, Minister”的中文介绍信息。</p>
+<p>打开这个文件，浏览一下内容。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-8970161a6b032583.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>我们确认中文文本内容已经正确存储。</p>
+<p>回到Jupyter笔记本的主页面。点击New按钮，新建一个笔记本(Notebook)。在Notebooks里面，请选择Python 2选项。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-7d4e976011fd89cb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>系统会提示我们输入Notebook的名称。为了和上次的英文词云制作笔记本区别，就叫它wordcloud-cn好了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-186938cdd5fccc95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>我们在网页里唯一的代码文本框里，输入以下3条语句。输入后，按Shift+Enter键执行。</p>
+<pre><code>filename = &quot;yes-minister-cn.txt&quot;
+with open(filename) as f:
+ mytext = f.read()
+</code></pre><p>然后我们尝试显示mytext的内容。输入以下语句之后，还是得按Shift+Enter键执行。</p>
+<pre><code>print(mytext)
+</code></pre><p>显示的结果如下图所示。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-327c7486e42e8630.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>既然中文文本内容读取没有问题，我们就开始分词吧。输入以下两行语句：</p>
+<pre><code>import jieba
+mytext = &quot; &quot;.join(jieba.cut(mytext))
+</code></pre><p>系统会提示一些信息，那是结巴分词第一次启用的时候需要做的准备工作。忽略就可以了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-e222c3190027dcf5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>分词的结果如何？我们来看看。输入：</p>
+<pre><code>print(mytext)
+</code></pre><p>你就可以看到下图所示的分词结果了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-4ff5ee35e72f6834.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>单词之间已经不再紧紧相连，而是用空格做了区隔，就如同英文单词间的自然划分一样。</p>
+<p>你是不是迫不及待要用分词后的中文文本作词云了？</p>
+<p>可以，输入以下语句：</p>
+<pre><code>from wordcloud import WordCloud
+wordcloud = WordCloud().generate(mytext)
+%pylab inline
+import matplotlib.pyplot as plt
+plt.imshow(wordcloud, interpolation=&apos;bilinear&apos;)
+plt.axis(&quot;off&quot;
+</code></pre><p>激动地期待着中文词云的出现？</p>
+<p>可惜，你看到的词云是这个样子的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-e25275c4b244baba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>你是不是非常愤怒，觉得这次又掉坑里了？</p>
+<p>别着急，出现这样的结果，并不是分词或者词云绘制工具有问题，更不是因为咱们的教程步骤有误，只是因为字体缺失。词云绘制工具wordcloud默认使用的字体是英文的，不包含中文编码，所以才会方框一片。解决的办法，就是把你之前下载的simsun.ttf，作为指定输出字体。</p>
+<p>输入以下语句：</p>
+<pre><code>from wordcloud import WordCloud
+wordcloud = WordCloud(font_path=&quot;simsun.ttf&quot;).generate(mytext)
+%pylab inline
+import matplotlib.pyplot as plt
+plt.imshow(wordcloud, interpolation=&apos;bilinear&apos;)
+plt.axis(&quot;off&quot;)
+</code></pre><p>这次你看到的输出图形就变成了这个样子：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-e48acc2dc20d6495.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这样一来，我们就通过中文词云的制作过程，体会到了中文分词的必要性了。</p>
+<p>这里给你留个思考题，对比一下此次生成的中文词云，和上次做出的英文词云：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/64542-487a6d2016e6bf55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这两个词云对应的文本都来自维基百科，描述的是同样一部剧，它们有什么异同？从这种对比中，你可以发现维基百科中英文介绍内容之间，有哪些有趣的规律？</p>
+<h1 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h1><p>掌握了本方法后，你自己做出了一张什么样的中文词云图？除了做词云以外，你还知道中文分词的哪些其他应用场景？欢迎留言，分享给大家。我们共同交流讨论。</p>
+<p>如果你对我的文章感兴趣，欢迎点赞，并且微信关注和置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
+<p>如果本文可能对你身边的亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。</p>
+<h1 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h1><ul>
+<li><a href="http://www.jianshu.com/p/e4b24a734ccc" target="_blank" rel="external">如何用Python做词云？ - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/d50a14541d01" target="_blank" rel="external">如何用Python做情感分析？ - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/4ea083874df4" target="_blank" rel="external">如何用Python做舆情时间序列可视化？ - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/67a71e366516" target="_blank" rel="external">贷还是不贷：如何用Python和机器学习帮你决策？ - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/fdde9fc03f94" target="_blank" rel="external">如何用Python从海量文本抽取主题？ - 简书</a></li>
+</ul>
+<h1 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h1><p>王树义，大学教师，终身学习者。稍微懂一点儿写作、演讲、Python和机器学习。欢迎微信关注并置顶我的公众号“玉树芝兰”(nkwangshuyi)。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/如何用Python做词云？/" rel="next" title="如何用Python做词云？">
+                <i class="fa fa-chevron-left"></i> 如何用Python做词云？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/如何选研究题目？/" rel="prev" title="如何选研究题目？">
+                如何选研究题目？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://oejqwrqkh.bkt.clouddn.com/temp_atom-c5fd7e52.JPG.jpg"
+              alt="王树义" />
+          
+            <p class="site-author-name" itemprop="name">王树义</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives">
+            
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分词"><span class="nav-number">2.</span> <span class="nav-text">分词</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据"><span class="nav-number">3.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#讨论"><span class="nav-number">5.</span> <span class="nav-text">讨论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸阅读"><span class="nav-number">6.</span> <span class="nav-text">延伸阅读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作者信息"><span class="nav-number">7.</span> <span class="nav-text">作者信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王树义</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
